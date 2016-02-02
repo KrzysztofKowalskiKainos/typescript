@@ -1,0 +1,25 @@
+<div ng-repeat="session in vm.sessions" ng-show="!vm.sessionSaved">
+    <fieldset ng-model="session">
+        <legend>
+            Session form
+        </legend>
+        <div class="hide">
+            <label for="id">id: </label>
+            <input id="id" type="text" placeholder="{{session.id}}" ng-model="session.id"/>
+            <label for="upVoteCount">id: </label>
+            <input id="upVoteCount" type="text" placeholder="0" value="0" ng-model="session.upVoteCount"/>
+        </div>
+        <label form="name">Session Name:</label>
+        <input id="name" type="text" placeholder="Name of your session..." ng-model="session.sessionName"/>
+        <label form="creatorName">Creator Name</label>
+        <input id="creatorName" type="text" placeholder="Creator name..." ng-model="session.creatorName"/>
+        <label form="duration">Duration</label>
+        <input id="duration" type="text" placeholder="Duration.." ng-model="session.duration"/>
+        <label form="level">Level</label>
+        <input id="level" type="text" placeholder="Level...text only" ng-model="session.level"/>
+        <label form="abstract">Abstract</label>
+        <input id="abstract" type="text" placeholder="Abstract..." ng-model="session.abstract"/>
+        </br>
+        <button class="btn btn-primary" ng-click="vm.removeSession(session.id)">Remove this session</button>
+    </fieldset>
+</div>

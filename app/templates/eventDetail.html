@@ -1,0 +1,45 @@
+<div style="padding-left:20px; padding right: 20px">
+    <a ng-href="/events" class="btn eventBtn">Home</a>
+    <button class="btn pull-right" ng-click="vm.reload()">Reload</button>
+    <hr/>
+    <img ng-src="{{vm.event.imageUrl}}" alt="{{event.name}}" />
+
+    <div class="row">
+        <div class="span11">
+            <h2>{{vm.event.name | uppercase}}</h2>
+        </div>
+            <div class="span3">
+                <div><strong>Date: {{vm.event.date}}</strong></div>
+                <div><strong>Time: {{vm.event.time}}</strong></div>
+            </div>
+            <div class="span4">
+                <address>
+                    <strong>Address:</strong></br>
+                    {{vm.event.location.address}}</br>
+                    {{vm.event.location.city}}, {{vm.event.location.state}}
+                </address>
+            </div>
+    </div>
+    <hr />
+    <h3>Sessions</h3>
+    Order By:
+    <select ng-model="sortOrder" class="input-small">
+        <option selected value="name">Name</option>
+        <option value="-upVoteCount">Votes</option>
+    </select>
+    Show:
+    <select ng-model="query" class="input-medium">
+        <option selected value="">All</option>
+        <option selected value="introductory">Introductory</option>
+        <option selected value="intermediate">Intermediate</option>
+        <option selected value="advanced">Advanced</option>
+    </select>
+    <ul class="thumbnails">
+        <li ng-repeat="session in vm.event.sessions | orderBy: sortOrder | filter: query" id="session{{session.id}}">
+            <div class="row session">
+                <voting-widget upvote="vm.upVoteSession(session)" downvote="vm.downVoteSession(session)" count="{{session.upVoteCount}}"></voting-widget>
+                <session-well></session-well>
+             </div>
+         </li>
+    </ul>
+</div>

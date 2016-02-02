@@ -1,0 +1,41 @@
+<div style="padding-left:20px; padding right: 20px">
+    <div class="container">
+        <h1>New Event</h1>
+        <hr/>
+        <form name="eventForm">
+            <fieldset>
+                <label form="eventName">Event Name:</label>
+                <input id="eventName" required ng-model="event.name" type="text" placeholder="Name of your Event..."/>
+                <label form="eventDate">Event Date:</label>
+                <input id="eventDate" required date-keys type="text" ng-pattern="/\d\d/\d\d/\d\d\d\d/" ng-model="event.date" placeholder="format (mm/dd/yyyy)..."/>
+                <label form="eventTime">Event Time:</label>
+                <input id="eventTime" type="text" ng-model="event.time" placeholder="start and end time..."/>
+                <label form="eventLocation">Event Location:</label>
+                <input id="eventLocation" type="text" ng-model="event.location.address" placeholder="Address of event..."/>
+                <br/>
+                <input id="eventCity" type="text" class="input-small" ng-model="event.location.city" placeholder="City..."/>
+                <input id="eventState" type="text" class="input-small" ng-model="event.location.state" placeholder="State..."/>
+                <label for="eventImageUrl">Image:</label>
+                <input id="eventImageUrl" type="url" class="inout-xlarge" ng-model="event.imageUrl" placeholder="Url of Image..."/>
+            </fieldset>
+            <img ng-src="{{event.imageUrl}}" src=""/>
+            <hr/>
+            <div class="row">
+                <div class="span12">
+                    <h2 style="display:inline;">Sessions</h2>
+                    <button class="btn btn-primary pull-right" ng-click="vm.addSession()">Add an session</button>
+                </div>
+            </div>
+        <hr/>
+            <div class="well empty-data" ng-show="!vm.eventAdded">
+                <p>
+                    You have not added a session
+                </p>
+            </div>
+            <event-form></event-form>
+            <hr/>
+            <button type="submit" ng-disabled="eventForm.$invalid" ng-click="vm.saveEvent(event, vm.sessions)" class="btn btn-primary">Save</button>
+            <button type="button" ng-click="cancelEdit()" class="btn btn-default">Cancel</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+{
+    "name": "Kainos hub",
+    "date": "02/03/2016",
+    "time": "9.00am - 5pm",
+    "location": {
+        "address": "69 Clcanconnel Gardens",
+        "city": "Belfast",
+        "state": "BA"
+    },
+    "imageUrl": "http://codecamp.kainos.com/wp-content/uploads/2014/07/Belfast-Met-02-2.jpg",
+    "id": 5,
+    "sessions": [{
+        "id": 1,
+        "name": "",
+        "creatorName": "Caryl Magill",
+        "duration": "3",
+        "level": "Advanced",
+        "abstract": "Create an app",
+        "upVoteCount": 0,
+        "sessionName": "CodeCamp"
+    }, {
+        "id": 2,
+        "name": "",
+        "creatorName": "Ali Allen",
+        "duration": "3",
+        "level": "Advanced",
+        "abstract": "Scaling Evolve",
+        "upVoteCount": 0,
+        "sessionName": "Scaling Evolve"
+    }]
+}

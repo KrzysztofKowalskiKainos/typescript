@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+    <head>
+        <base href="/"/>
+        <meta charset="UTF-8">
+        <title>Create an Event</title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/css/app.css" />
+    </head>
+
+    <body ng-cloak>
+        <div class="container">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="nav">
+                        <li><a href="/events">View Events</a></li>
+                        <li><a href="/createEvent">Create Event</a></li>
+                        <li><a href="/profile">Edit profile</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ng-view></ng-view>
+        </div>
+        <!--Bootstrap files-->
+        <script src="/lib/jquery.min.js"></script>
+        <script src="/lib/bootstrap.min.js"></script>
+        <!--Angular Dependancies-->
+        <script src="/lib/angular/angular.js"></script>
+        <script src="/lib/angular/angular-cookies.js"></script>
+        <script src="/lib/angular/angular-resource.js"></script>
+        <script src="/lib/angular/angular-route.js"></script>
+        <script src="/lib/angular/angular-sanitize.js"></script>
+        <!--Configuration-->
+        <script src="/app.module.js"></script>
+        <script src="/app.config.js"></script>
+        <!--Modules-->
+        <script src="/core/core.module.js"></script>
+        <script src="/blocks/blocks.module.js"></script>
+        <script src="/services/services.module.js"></script>
+        <script src="/widgets/widgets.module.js"></script>
+        <script src="/profile/profile.module.js"></script>
+        <script src="/filters/filters.module.js"></script>
+        <!--Services-->
+        <script src="/blocks/Md5Encode.service.js"></script>
+        <script src="/blocks/ConvertType.service.js"></script>
+        <script src="/services/dataservice.js"></script>
+        <script src="/services/gravatarURLBuilder.service.js"></script>
+        <script src="/services/person.service.js"></script>
+        <!--Features module-->
+        <script src="/events/events.module.js"></script>
+        <script src="/session/session.module.js"></script>
+        <!--Controllers-->
+        <script src="/session/session.controller.js"></script>
+        <script src="/events/events.controller.js"></script>
+        <script src="/events/eventDetail.controller.js"></script>
+        <script src="/profile/profile.controller.js"></script>
+        <!--Widgets-->
+        <script src="/widgets/votingWidget.js"></script>
+        <script src="/widgets/eventThumbnail.js"></script>
+        <script src="/widgets/gravatarImage.js"></script>
+        <script src="/widgets/eventForm.js"></script>
+        <script src="/widgets/sessionWell.js"></script>
+        <!--Filters-->
+        <script src="/filters/duration.filter.js"></script>
+        </body>
+</html>
